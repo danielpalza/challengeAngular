@@ -24,24 +24,22 @@ export class GenericFormComponent {
 
   onSubmit(): void {
     if (this.formulario.valid) {
-      this.openModal();
+      this.openModal()
       this.formulario.reset();
 
     }
   }
 
-  openModal() {
-    const modalRef = this.modalService.open(ModalComponent);
+  openModal(): void  {
+    const modalRef = this.modalService.open(ModalComponent)
     modalRef.componentInstance.title = 'Datos ingresados';
-
     modalRef.componentInstance.content = `<div>
     <p>Nombre: ${this.formulario.value.nombre}<br>
     Email: ${this.formulario.value.email}<br>
     Telefono: ${this.formulario.value.telefono}<br>
     Cuil: ${this.formulario.value.cuil}<br>
-    Fecha de Nacimiento: ${this.formulario.value.fechaNacimiento}
+    Fecha de Nacimiento: ${this.formulario.value.fechaNacimiento?.replace(/-/g,'/')}
     </p>
 </div>`;
-
   }
 }

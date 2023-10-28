@@ -16,7 +16,7 @@
   
     <div class="form-group">
       <label for="telefono">Teléfono:</label>
-      <input type="tel" formControlName="telefono" class="form-control" id="telefono" prefix="(+54)-" mask="000-0000-0000" required>
+      <input type="tel" formControlName="telefono" class="form-control" id="telefono" prefix="(+54)-" mask="000-0000-0000" [dropSpecialCharacters]="false" required>
       <div *ngIf="formulario.get('telefono')?.invalid && formulario.get('telefono')?.touched" class="invalid-feedback">
         El teléfono es requerido
       </div>
@@ -24,7 +24,7 @@
 
     <div class="form-group">
         <label for="cuil">Cuil:</label>
-        <input type="text" formControlName="cuil" class="form-control" id="cuil" mask="00-00000000-0" required>
+        <input type="text" formControlName="cuil" class="form-control" id="cuil" mask="00-00000000-0" [dropSpecialCharacters]="false" required>
         <div *ngIf="formulario.get('cuil')?.invalid && formulario.get('cuil')?.touched" class="invalid-feedback">
           El cuil es requerido
         </div>
@@ -32,7 +32,7 @@
 
     <div class="form-group">
       <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-      <input type="date" formControlName="fechaNacimiento" class="form-control" id="fechaNacimiento"  required>
+      <input type="date" formControlName="fechaNacimiento" class="form-control" id="fechaNacimiento" required>
       <div *ngIf="formulario.get('fechaNacimiento')?.invalid && formulario.get('fechaNacimiento')?.touched" class="invalid-feedback">
         La fecha de nacimiento es requerida
       </div>
