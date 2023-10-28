@@ -24,8 +24,9 @@ export class GenericFormComponent {
 
   onSubmit(): void {
     if (this.formulario.valid) {
-      this.formulario.reset();
       this.openModal();
+      this.formulario.reset();
+
     }
   }
 

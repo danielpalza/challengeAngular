@@ -1,1 +1,10 @@
-<p>generic-table works!</p>
+<div class="grid__wrapper w-100">
+    <igx-grid  #grid1 [data]="data" [moving]="true" [height]="'800px'" [width]="'100%'"  [displayDensity]="'cosy'"
+                [allowFiltering]="true" [filterMode]="'excelStyleFilter'" >
+        <igx-column [width]="'200px'" header="ID" [field]="'ID'" [filterable]="true" [sortable]="true" [dataType]="'string'"></igx-column>
+        <igx-column [width]="'200px'" header="Company name" [field]="'CompanyName'" [filterable]="true" [sortable]="true" [dataType]="'string'"></igx-column>
+        <igx-column [width]="'200px'" header="Employees"[field]="'Employees'" [filterable]="true" [sortable]="true" [dataType]="'number'"></igx-column>
+        <igx-column [width]="'200px'" header="Contract"[field]="'Contract'" [filterable]="true" [sortable]="true" [dataType]="'boolean'"></igx-column>
+        <igx-column [width]="'200px'" header="Date created" [field]="'DateCreated'" [filterable]="true" [sortable]="true" [dataType]="'date'"></igx-column>
+    </igx-grid>
+</div>
